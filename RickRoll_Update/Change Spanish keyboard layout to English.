@@ -1,0 +1,35 @@
+//This DigiSpark script changes Windows 10 spanish keyboard to Us-English layout.
+//Delays can be changed for faster delivery.
+
+#include "DigiKeyboard.h"
+
+void setup() {
+//left empty
+}
+
+
+void loop() {
+  DigiKeyboard.sendKeyStroke(0);
+  DigiKeyboard.delay(1000);
+  DigiKeyboard.sendKeyStroke(0, MOD_GUI_LEFT);
+  DigiKeyboard.delay(1000);
+  DigiKeyboard.print("cmd");
+  DigiKeyboard.delay(1000);
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(2000);
+  DigiKeyboard.println("powershell");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(500);
+  DigiKeyboard.println("set/WinUserLanguageList");
+  DigiKeyboard.delay(500);
+  DigiKeyboard.println("en/US");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(500);
+  DigiKeyboard.print("exit");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.print("exit");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+}
+//By. Sqrtlhl
